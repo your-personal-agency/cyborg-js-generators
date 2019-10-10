@@ -45,8 +45,10 @@ export default class {{pascalCase name}} extends Component {
 
 {{#if destroy}}
   destroy(): void {
+{{#if comments}}
     // do your custom garbage collection before
-    // the super.destroy()l
+    // the super.destroy()
+{{/if}}
     super.destroy();
   }
 {{/if}}
