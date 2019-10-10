@@ -31,13 +31,13 @@ module.exports = function(plop, config) {
         type: 'confirm',
         name: 'onload',
         default: false,
-        message: 'Want an onload handler?'
+        message: 'Want a custom onload handler?'
       },
       {
         type: 'confirm',
         name: 'destroy',
-        default: false,
-        message: 'Want a destroy method?'
+        default: true,
+        message: 'Want a custom destroy method?'
       }],
     actions: [{
       type: 'add',
