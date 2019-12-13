@@ -1,8 +1,8 @@
 // @flow
 
-import { Component } from '@ypa/cyborg-js';
+import { View } from '@ypa/cyborg-js';
 
-export default class {{pascalCase name}} extends Component {
+export default class {{pascalCase name}} extends View {
 
 {{#if comments}}
     // notifications array is an array
@@ -12,25 +12,8 @@ export default class {{pascalCase name}} extends Component {
 
   bind(pEl: HTMLElement): void {
     super.bind(pEl);
-{{#if comments}}
-    // at this point the connected HTMLElement is available.
-    // this.addListener('your-notification'); creates a listener for the 'your-notification' Notification
-
-    // this.addEventListener('click', handler); is a eventlistener added to your main HTMLElement.
-    // all eventlisteners are removed in the destroy method
-{{/if}}
   }
 
-{{#if onload}}
-  onload(): void {
-{{#if comments}}
-    // window.onload handler
-    // doing something with the element:
-    // this.el is a reference to your element.
-{{/if}}
-  }
-
-{{/if}}
   handleNotifications(pData: Object): void {
     super.handleNotifications(pData);
 {{#if comments}}
@@ -39,7 +22,7 @@ export default class {{pascalCase name}} extends Component {
 {{/if}}
 {{#ifEquals statement 'Switch statement'}}
     switch(pData.notification) {
-      default:
+    default:
       break;
     }
 {{/ifEquals}}
@@ -47,7 +30,6 @@ export default class {{pascalCase name}} extends Component {
     if(pData.notification === 'your-notification') {
     }
 {{/ifEquals}}
-  }
 
 {{#if destroy}}
   destroy(): void {
