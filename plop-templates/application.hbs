@@ -1,0 +1,21 @@
+// @flow
+
+import { MotherBoard } from '@ypa/cyborg-js';
+
+export default class App {
+
+  static motherBoard:MotherBoard = MotherBoard.getInstance();
+
+  constructor() {
+    this.initComponents();
+    this.initViews();
+  }
+
+  initComponents():void {
+    App.motherBoard.componentsMap = {}
+  }
+
+  initViews():void {
+    App.motherBoard.viewsMap = {}
+  }
+}

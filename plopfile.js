@@ -45,6 +45,38 @@ module.exports = function(plop, config) {
       templateFile: 'plop-templates/component.hbs'
     }]
   });
+  plop.setGenerator('make:view', {
+    description: 'Create Cyborg View',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'View name?'
+      },
+      {
+        type: 'confirm',
+        name: 'comments',
+        default: false,
+        message: 'Want helper comments?'
+      },
+      {
+        type: 'list',
+        name: 'statement',
+        choices: ['None', 'Switch statement', 'If statement'],
+        message: 'What kind of statement you want in handleNotifications?'
+      },
+      {
+        type: 'confirm',
+        name: 'destroy',
+        default: true,
+        message: 'Want a custom destroy method?'
+      }],
+    actions: [{
+      type: 'add',
+      path: cfg.sourcePath + '{{pascalCase name}}View.js',
+      templateFile: 'plop-templates/view.hbs'
+    }]
+  });
   plop.setGenerator('make:motherboard', {
     description: 'Create Cyborg Component',
     prompts: [
@@ -57,6 +89,15 @@ module.exports = function(plop, config) {
       type: 'add',
       path: cfg.sourcePath + '{{pascalCase name}}.js',
       templateFile: 'plop-templates/motherboard.hbs'
+    }]
+  });
+  plop.setGenerator('make:app', {
+    description: 'Create Cyborg App',
+    prompts: [],
+    actions: [{
+      type: 'add',
+      path: cfg.sourcePath + 'index.js',
+      templateFile: 'plop-templates/application.hbs'
     }]
   });
 };
