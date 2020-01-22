@@ -41,7 +41,7 @@ module.exports = function(plop, config) {
       }],
     actions: [{
       type: 'add',
-      path: cfg.sourcePath + '{{pascalCase name}}Component.js',
+      path: cfg.sourcePath + 'components/{{pascalCase name}}.js',
       templateFile: 'plop-templates/component.hbs'
     }]
   });
@@ -73,7 +73,7 @@ module.exports = function(plop, config) {
       }],
     actions: [{
       type: 'add',
-      path: cfg.sourcePath + '{{pascalCase name}}View.js',
+      path: cfg.sourcePath + 'views/{{pascalCase name}}.js',
       templateFile: 'plop-templates/view.hbs'
     }]
   });
