@@ -2,20 +2,26 @@
 
 import { MotherBoard } from '@ypa/cyborg-js';
 
-export default class App {
+const map:Object = {};
 
-  static motherBoard:MotherBoard = MotherBoard.getInstance();
+class App {
 
-  constructor() {
-    this.initComponents();
-    this.initViews();
-  }
+    static init(): void {
+        MotherBoard.getInstance().componentsMap = map;
 
-  initComponents():void {
-    App.motherBoard.componentsMap = {}
-  }
+        App.initPolyfills();
+        App.initPlugins();
+    }
 
-  initViews():void {
-    App.motherBoard.viewsMap = {}
-  }
+    static initPlugins(): void {
+        // add plugins
+    }
+
+    static initPolyfills(): void {
+        // add polyfills
+        // Polyfills are javascript functions that are created for fallback
+    }
 }
+
+// And go...
+App.init();
