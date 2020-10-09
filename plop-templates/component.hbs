@@ -1,61 +1,68 @@
-// @flow
-
-import { Component } from '@ypa/cyborg-js';
+import { Component,NotificationBody } from '@ypa/cyborg-js';
 
 export default class {{pascalCase name}} extends Component {
 
 {{#if comments}}
-    // notifications array is an array
-    // with predefined and auto added notifications
+// notifications array is an array
+// with predefined and auto added notifications
 {{/if}}
-  notifications:Array<string> = [];
+notifications:ReadOnlyArray<string> = [];
 
   bind(pEl: HTMLElement): void {
-    super.bind(pEl);
-{{#if comments}}
-    // at this point the connected HTMLElement is available.
-    // this.addListener('your-notification'); creates a listener for the 'your-notification' Notification
+  super.bind(pEl);
+  {{#if comments}}
+  // at this point the connected HTMLElement is available.
+  // this.addListener('your-notification'); creates a listener for the 'your-notification' Notification
 
-    // this.addEventListener('click', handler); is a eventlistener added to your main HTMLElement.
-    // all eventlisteners are removed in the destroy method
-{{/if}}
+  // this.addEventListener('click', handler); is a eventlistener added to your main HTMLElement.
+  // all eventlisteners are removed in the destroy method
+  {{/if}}
   }
 
-{{#if onload}}
+  {{#if onload}}
   onload(): void {
-{{#if comments}}
-    // window.onload handler
-    // doing something with the element:
-    // this.el is a reference to your element.
-{{/if}}
+  {{#if comments}}
+  // window.onload handler
+  // doing something with the element:
+  // this.el is a reference to your element.
+  {{/if}}
   }
 
-{{/if}}
-  handleNotifications(pData: Object): void {
-    super.handleNotifications(pData);
-{{#if comments}}
-    // pData is the Notification Object.
-    // it always have a pData.notification with the type reference.
-{{/if}}
-{{#ifEquals statement 'Switch statement'}}
-    switch(pData.notification) {
-      default:
-      break;
-    }
-{{/ifEquals}}
-{{#ifEquals statement 'If statement'}}
-    if(pData.notification === 'your-notification') {
-    }
-{{/ifEquals}}
+  {{#if onunload}}
+  onunload(): void {
+  {{#if comments}}
+  // window.onunload handler
+  // doing something with the element:
+  // this.el is a reference to your element.
+  {{/if}}
   }
 
-{{#if destroy}}
+  {{/if}}
+  handleNotifications(pData: NotificationBody): void {
+  super.handleNotifications(pData);
+  {{#if comments}}
+  // pData is the Notification Object.
+  // it always have a pData.notification with the type reference.
+  {{/if}}
+  {{#ifEquals statement 'Switch statement'}}
+  switch(pData.notification) {
+  default:
+  break;
+  }
+  {{/ifEquals}}
+  {{#ifEquals statement 'If statement'}}
+  if(pData.notification === 'your-notification') {
+  }
+  {{/ifEquals}}
+  }
+
+  {{#if destroy}}
   destroy(): void {
-{{#if comments}}
-    // do your custom garbage collection before
-    // the super.destroy()
-{{/if}}
-    super.destroy();
+  {{#if comments}}
+  // do your custom garbage collection before
+  // the super.destroy()
+  {{/if}}
+  super.destroy();
   }
-{{/if}}
-}
+  {{/if}}
+  }
