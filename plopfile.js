@@ -35,6 +35,12 @@ module.exports = function(plop, config) {
       },
       {
         type: 'confirm',
+        name: 'onunload',
+        default: false,
+        message: 'Want a custom onunload handler?'
+      },
+      {
+        type: 'confirm',
         name: 'destroy',
         default: true,
         message: 'Want a custom destroy method?'
@@ -43,20 +49,6 @@ module.exports = function(plop, config) {
       type: 'add',
       path: cfg.sourcePath + 'components/{{pascalCase name}}.js',
       templateFile: 'plop-templates/component.hbs'
-    }]
-  });
-  plop.setGenerator('make:motherboard', {
-    description: 'Create Cyborg Component',
-    prompts: [
-      {
-        type: 'input',
-        name: 'name',
-        message: 'MotherBoard name?'
-      }],
-    actions: [{
-      type: 'add',
-      path: cfg.sourcePath + '{{pascalCase name}}.js',
-      templateFile: 'plop-templates/motherboard.hbs'
     }]
   });
   plop.setGenerator('make:app', {

@@ -1,19 +1,19 @@
 {
-  "name" : "@ypa/cyborg-js-generators",
-  "version" : "2.0.0",
-  "main" : "plopfile.js",
-  "description" : "CyborgJS - PlopJS Generators",
-  "author" : "Jos Koomen <jos@yourpersonalagency.nl>",
-  "license" : "MIT",
-  "private" : false,
-  "scripts" : {
-    "plop" : "plop"
+  "name": "@ypa/cyborg-js-generators",
+  "version": "3.0.0",
+  "main": "plopfile.js",
+  "description": "CyborgJS - PlopJS Generators",
+  "author": "Jos Koomen <jos@yourpersonalagency.nl>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "plop": "plop"
   },
-  "keywords" : [
+  "keywords": [
     "cyborg-js",
     "plop"
   ],
-  "devDependencies" : {
-    "plop" : "^2.4.0"
+  "devDependencies": {
+    "plop": "^2.4.0"
   }
 }

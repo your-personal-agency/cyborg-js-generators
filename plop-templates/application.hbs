@@ -1,26 +1,23 @@
-// @flow
-
 import { MotherBoard } from '@ypa/cyborg-js';
 
 const map:Object = {};
 
 class App {
 
-    static init(): void {
-        MotherBoard.getInstance().componentsMap = map;
+static init(): void {
+MotherBoard.getInstance().componentsMap = map;
 
-        App.initPolyfills();
-        App.initPlugins();
-    }
+App.initPolyfills();
+App.initPlugins();
+}
 
-    static initPlugins(): void {
-        // add plugins
-    }
+static initPlugins(): void {
+// add plugins
+}
 
-    static initPolyfills(): void {
-        // add polyfills
-        // Polyfills are javascript functions that are created for fallback
-    }
+static initPolyfills(): void {
+// add polyfills
+}
 }
 
 // And go...
