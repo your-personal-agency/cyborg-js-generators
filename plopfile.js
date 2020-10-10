@@ -47,7 +47,7 @@ module.exports = function(plop, config) {
       }],
     actions: [{
       type: 'add',
-      path: cfg.sourcePath + 'components/{{pascalCase name}}.js',
+      path: cfg.sourcePath + 'components/{{pascalCase name}}.ts',
       templateFile: 'plop-templates/component.hbs'
     }]
   });
@@ -56,7 +56,7 @@ module.exports = function(plop, config) {
     prompts: [],
     actions: [{
       type: 'add',
-      path: cfg.sourcePath + 'index.js',
+      path: cfg.sourcePath + 'index.ts',
       templateFile: 'plop-templates/application.hbs'
     }]
   });
