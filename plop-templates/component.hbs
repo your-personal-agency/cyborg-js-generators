@@ -1,12 +1,14 @@
-import { Component,NotificationBody } from '@ypa/cyborg-js';
+import { Component } from '@ypa/cyborg-js/dist/core/Component';
+import { NotificationBody } from '@ypa/cyborg-js/dist/notifications/NotificationBody';
 
 export default class {{pascalCase name}} extends Component {
 
 {{#if comments}}
-// notifications array is an array
+// _notifications array is an array
 // with predefined and auto added notifications
+// You can also use the public getter notifications()
 {{/if}}
-notifications:ReadOnlyArray<string> = [];
+protected _notifications:ReadOnlyArray<string> = [];
 
   bind(pEl: HTMLElement): void {
   super.bind(pEl);
