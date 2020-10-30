@@ -1,0 +1,10 @@
+
+{{#if comments}}
+  // Notifications enum are strict constants
+  // Those can be used to send signals to from 1 component to another
+{{/if}}
+enum Notifications {
+  {{upperCase name}} = 'Notifications.{{upperCase name}}',
+}
+
+export default Notifications;
