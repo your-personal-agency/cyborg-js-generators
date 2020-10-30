@@ -1,71 +1,71 @@
-import { Component } from '@ypa/cyborg-js/dist/core/Component';
+import { Component } from '@ypa/cyborg-js';
 import { NotificationBody } from '@ypa/cyborg-js/dist/notifications/NotificationBody';
 
-export default class {{pascalCase name}} extends Component {
+export default class c extends Component {
 
 {{#if comments}}
-// _notifications array is an array
-// with predefined and auto added notifications
-// You can also use the public getter notifications()
+  // _notifications array is an array
+  // with predefined and auto added notifications
+  // You can also use the public getter notifications()
 {{/if}}
-protected _notifications:ReadOnlyArray<string> = [];
+  protected _notifications:ReadonlyArray<string> = [];
 
   bind(pEl: HTMLElement): void {
-  super.bind(pEl);
+    super.bind(pEl);
   {{#if comments}}
-  // at this point the connected HTMLElement is available.
-  // this.addListener('your-notification'); creates a listener for the 'your-notification' Notification
+    // at this point the connected HTMLElement is available.
+    // this.addListener('your-notification'); creates a listener for the 'your-notification' Notification
 
-  // this.addEventListener('click', handler); is a eventlistener added to your main HTMLElement.
-  // all eventlisteners are removed in the destroy method
+    // this.addEventListener('click', handler); is a eventlistener added to your main HTMLElement.
+    // all eventlisteners are removed in the destroy method
   {{/if}}
   }
 
-  {{#if onload}}
+{{#if onload}}
   onload(): void {
   {{#if comments}}
-  // window.onload handler
-  // doing something with the element:
-  // this.el is a reference to your element.
+    // window.onload handler
+    // doing something with the element:
+    // this.el is a reference to your element.
   {{/if}}
   }
 
-  {{/if}}
-  {{#if onunload}}
+{{/if}}
+{{#if onunload}}
   onunload(): void {
   {{#if comments}}
-  // window.onunload handler
-  // doing something with the element:
-  // this.el is a reference to your element.
+    // window.onunload handler
+    // doing something with the element:
+    // this.el is a reference to your element.
   {{/if}}
   }
 
-  {{/if}}
+{{/if}}
   handleNotifications(pData: NotificationBody): void {
-  super.handleNotifications(pData);
+    super.handleNotifications(pData);
   {{#if comments}}
-  // pData is the Notification Object.
-  // it always have a pData.notification with the type reference.
+    // pData is the Notification Object.
+    // it always have a pData.notification with the type reference.
   {{/if}}
   {{#ifEquals statement 'Switch statement'}}
-  switch(pData.notification) {
-  default:
-  break;
-  }
+    switch(pData.notification) {
+      default:
+      break;
+    }
   {{/ifEquals}}
   {{#ifEquals statement 'If statement'}}
-  if(pData.notification === 'your-notification') {
-  }
+    if(pData.notification === 'your-notification') {
+    }
   {{/ifEquals}}
   }
 
   {{#if destroy}}
   destroy(): void {
   {{#if comments}}
-  // do your custom garbage collection before
-  // the super.destroy()
+    // do your custom garbage collection before
+    // the super.destroy()
   {{/if}}
-  super.destroy();
+    super.destroy();
   }
   {{/if}}
-  }
+}
