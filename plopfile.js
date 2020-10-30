@@ -60,4 +60,24 @@ module.exports = function(plop, config) {
       templateFile: 'plop-templates/application.hbs'
     }]
   });
+  plop.setGenerator('make:notifications', {
+    description: 'Create Notifications File',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Name your first notification:'
+      },
+      {
+        type: 'confirm',
+        name: 'comments',
+        default: false,
+        message: 'Want helper comments?'
+      }],
+    actions: [{
+      type: 'add',
+      path: cfg.sourcePath + 'constants/Notifications.ts',
+      templateFile: 'plop-templates/notifications.hbs'
+    }]
+  });
 };

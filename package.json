@@ -1,6 +1,6 @@
 {
   "name": "@ypa/cyborg-js-generators",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "main": "plopfile.js",
   "description": "CyborgJS - PlopJS Generators",
   "author": "Jos Koomen <jos@yourpersonalagency.nl>",
@@ -17,6 +17,6 @@
     "plop": "^2.4.0"
   },
   "dependencies": {
-    "@ypa/cyborg-js":">=3.0.1"
+    "@ypa/cyborg-js":">=3.0.6"
   }
 }

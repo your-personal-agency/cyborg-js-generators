@@ -1,24 +1,24 @@
-import { MotherBoard } from '@ypa/cyborg-js/dist/core/MotherBoard';
+import { MotherBoard } from '@ypa/cyborg-js';
 
 const map:Record<string,any> = {};
 
-    class App {
+class App {
 
-    static init(): void {
+  static init(): void {
     MotherBoard.getInstance().componentsMap = map;
 
     App.initPolyfills();
     App.initPlugins();
-    }
+  }
 
-    static initPlugins(): void {
+  static initPlugins(): void {
     // add plugins
-    }
+  }
 
-    static initPolyfills(): void {
+  static initPolyfills(): void {
     // add polyfills
-    }
-    }
+  }
+}
 
-    // And go...
-    App.init();
+// And go...
+App.init();
