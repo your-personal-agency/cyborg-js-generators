@@ -1,7 +1,7 @@
 import { Component } from '@ypa/cyborg-js';
 import { NotificationBody } from '@ypa/cyborg-js/dist/notifications/NotificationBody';
 
-export default class c extends Component {
+export default class {{pascalCase name}} extends Component {
 
 {{#if comments}}
   // _notifications array is an array
@@ -31,16 +31,6 @@ export default class c extends Component {
   }
 
 {{/if}}
-{{#if onunload}}
-  onunload(): void {
-  {{#if comments}}
-    // window.onunload handler
-    // doing something with the element:
-    // this.el is a reference to your element.
-  {{/if}}
-  }
-
-{{/if}}
   handleNotifications(pData: NotificationBody): void {
     super.handleNotifications(pData);
   {{#if comments}}
@@ -59,7 +49,17 @@ export default class c extends Component {
   {{/ifEquals}}
   }
 
-  {{#if destroy}}
+{{#if onunload}}
+  onunload(): void {
+  {{#if comments}}
+    // window.onunload handler
+    // doing something with the element:
+    // this.el is a reference to your element.
+  {{/if}}
+  }
+
+{{/if}}
+{{#if destroy}}
   destroy(): void {
   {{#if comments}}
     // do your custom garbage collection before
@@ -67,5 +67,5 @@ export default class c extends Component {
   {{/if}}
     super.destroy();
   }
-  {{/if}}
+{{/if}}
 }
