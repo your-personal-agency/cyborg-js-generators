@@ -42,7 +42,7 @@ module.exports = function(plop, config) {
       {
         type: 'confirm',
         name: 'destroy',
-        default: true,
+        default: false,
         message: 'Want a custom destroy method?'
       }],
     actions: [{
