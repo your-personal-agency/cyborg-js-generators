@@ -1,5 +1,4 @@
-import { Component } from '@ypa/cyborg-js';
-import { NotificationBody } from '@ypa/cyborg-js/dist/notifications/NotificationBody';
+import { Component, NotificationBody } from '@ypa/cyborg-js';
 
 export default class {{pascalCase name}} extends Component {
 
@@ -40,7 +39,9 @@ export default class {{pascalCase name}} extends Component {
   {{#ifEquals statement 'Switch statement'}}
     switch(pData.notification) {
       default:
-      break;
+        break;
+      case 'your-notification':
+        break;
     }
   {{/ifEquals}}
   {{#ifEquals statement 'If statement'}}
